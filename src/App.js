@@ -1,11 +1,9 @@
 import React from 'react'
-import Login from './Components/login';
+import Home from './Pages/home/home';
 function App() {
- 
   return (
     <div>
-      <Login />
-
+      <Home />
     </div>
     );
 }
