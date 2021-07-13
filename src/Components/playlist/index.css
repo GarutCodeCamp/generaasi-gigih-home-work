@@ -1,0 +1,24 @@
+.playlist{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 30%;
+    text-align: center;
+    margin: auto;
+    gap: 1em;
+    color: white;
+    font-family: cursive;
+}
+
+.playlist > button{
+    margin: auto;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    border: #eaea solid 1px;
+    padding: 11px;
+    color: gold;
+    background-color: rgb(23, 158, 95);
+    border-radius: 10px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
