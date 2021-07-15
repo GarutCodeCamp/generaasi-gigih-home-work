@@ -1,0 +1,11 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.home{
+    background: linear-gradient( #39a2dbce, #3aa8e4d0);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
