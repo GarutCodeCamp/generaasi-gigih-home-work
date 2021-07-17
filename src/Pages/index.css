@@ -4,8 +4,105 @@
     box-sizing: border-box;
 }
 .home{
-    background: linear-gradient( #39a2dbce, #3aa8e4d0);
-    height: 100vh;
+    background: linear-gradient( #80c3e7ce, #7bd1ff);
+    
+}
+
+
+
+.song{
     display: flex;
+    flex-wrap: wrap;
+    gap: 1em 1em;
     justify-content: center;
+    background: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.7));
+    width: 90vw;
+    border-radius: 10px;
+    margin:  auto;
+    padding: 20px 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 600px){
+    .song{
+        flex-direction: column;
+    }
 }

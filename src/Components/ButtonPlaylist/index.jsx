@@ -12,4 +12,7 @@ const PlayButton=()=>{
     
 }
 
-export default PlayButton;
+const Button =(props)=>{
+    return <button className="btn btn-primary">play &raquo; </button>
+}
+export { PlayButton, Button};
