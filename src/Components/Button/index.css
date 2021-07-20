@@ -1,0 +1,25 @@
+
+
+.btn{
+    font-size: 1.1em;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin: auto;
+}
+.btn-success{
+    background-color: #50CB93;
+    text-transform: uppercase;
+    font-family: monospace;
+    font-weight: 600;
+    color: white;
+    transition: transform .2s;
+    cursor: pointer;
+
+}
+.btn:hover{
+    transform: scale(1.02);
+    background-color: #71EFA3;
+    color: black;
+}

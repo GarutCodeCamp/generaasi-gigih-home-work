@@ -1,9 +1,14 @@
 import React from 'react'
-import Home from './Pages/home/home';
+import LoginSpotify from './Pages/spotify';
+
+
+
 function App() {
   return (
-    <div>
-      <Home />
+    <div className="spotify-bg">
+      <div className="card">
+        <LoginSpotify />
+      </div>
     </div>
     );
 }
