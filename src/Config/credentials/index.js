@@ -4,7 +4,7 @@ const client_and_secret = {
 }
 
 
-const url_Authorize = `https://accounts.spotify.com/authorize?client_id=${client_and_secret.client_Id}&response_type=token&redirect_uri=http://localhost:3000/&state=STATE&scope=user-read-private%20user-read-email&show_dialog=true`;
+const url_Authorize = `https://accounts.spotify.com/authorize?client_id=${client_and_secret.client_Id}&redirect_uri=http://localhost:3000/&state=STATE&scope=user-read-private%20user-read-email&response_type=token&show_dialog=true`;
 
 const getToken_Url=()=>{
     return window.location.hash
@@ -14,7 +14,7 @@ const getToken_Url=()=>{
         let parts = item.split('=');
         initial[parts[0]] = decodeURIComponent(parts[1]);
         return initial;
-    })
+    },{})
 
 }
 export {
