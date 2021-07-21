@@ -6,6 +6,8 @@ const client_and_secret = {
 
 const url_Authorize = `https://accounts.spotify.com/authorize?client_id=${client_and_secret.client_Id}&redirect_uri=http://localhost:3000/&state=STATE&scope=user-read-private%20user-read-email&response_type=token&show_dialog=true`;
 
+
+
 const getToken_Url=()=>{
     return window.location.hash
     .substring(1)
@@ -17,6 +19,8 @@ const getToken_Url=()=>{
     },{})
 
 }
+
+
 export {
     url_Authorize,
     client_and_secret,
