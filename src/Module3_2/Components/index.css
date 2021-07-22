@@ -1,0 +1,81 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.btn{
+  text-decoration: none;
+  font-family: monospace;
+  font-size: 1.3em;
+  margin: auto;
+  padding: 10px 20px;   
+  border: none;
+  border-radius: 5px;
+}
+
+.btn-primary{
+  background: rgb(33, 156, 33);
+  color: white;
+  text-transform: uppercase;
+}
+.btn-success{
+  background: rgb(33, 156, 33);
+  color: white;
+  text-transform: uppercase;
+}
+
+
+.navbar{
+  width: 100%;
+  background: #070707;
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-around;
+  margin: auto;
+}
+
+
+
+.playlist{
+  width: 70%;
+  height: 5em;
+  background: #121212;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 4fr 1fr;
+  overflow: hidden;
+  border-radius: 2px;
+  transition: 0.2s;
+}
+.playlist:hover{
+  background: rgba(255,255,255,0.4);
+}
+.image-size{
+  width: 80%;
+  height: 5em;
+  margin: 2px;
+}
+.image-size > img{
+  object-fit: cover;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+}
+
+
+
+.playlist> .text{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 2em;
+  text-align: start;
+  color: white;
+  font-family: monospace;
+}
+
+
+
+.select{
+  margin: auto;
+}

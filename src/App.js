@@ -1,15 +1,11 @@
 import React from 'react'
-import LoginSpotify from './Pages/spotify';
+import Home from './Module3_2';
 
 
 
 function App() {
   return (
-    <div className="spotify-bg">
-      <div className="card">
-        <LoginSpotify />
-      </div>
-    </div>
+    <Home />
     );
 }
 
