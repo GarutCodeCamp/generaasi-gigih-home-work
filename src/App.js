@@ -1,8 +1,7 @@
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 import "./index.css"
-import { useEffect } from 'react/cjs/react.development';
-import {useAccount, useCreatePlaylist} from './module3_3/Utils';
-import Home from './module3_3/pages/Spotify';
+import {useAccount} from './testModule/Utils';
+import Home from './testModule/pages/Spotify';
 
 
 
@@ -10,7 +9,17 @@ function App() {
 
   const [token,setToken] = useState(undefined)
   const[user,FetchUser]= useAccount(token)
-  const  [create,handleInput,handleClick] = useCreatePlaylist(token,user.id)
+  const [post, setPost] = useState({
+    name: "",
+    desc: "",
+    public: false,
+    collaborative: false,
+  })
+  const handleChange = (e) => {
+    setPost({
+      [e.target.name]: e.target.value
+    });
+  };
   useEffect(()=>{
     
   getAPI()
@@ -33,34 +42,38 @@ function App() {
           }
       }
 
-      // const PostPlaylist = async()=>{
-      //   fetch(`https://api.spotify.com/v1/users/${user.id}/playlists`,{
-      //    method: "POST",
-      //    headers: {
-      //     "Content-Type": "application/json",
-      //     Authorization: "Bearer " + token,
-      //    },
-      //    body: JSON.stringify({
-      //      name: 'test Name',
-      //      description:"test Desc"
-      //    })
-      //  }).then(res=> res.json()).then(data=>console.log(data))
-      // }
+      const PostPlaylist = async(postData)=>{
+        fetch(`https://api.spotify.com/v1/users/${user.id}/playlists`,{
+         method: "POST",
+         headers: {
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + token,
+         },
+         body: JSON.stringify({
+           name: postData.name,
+           description:postData.desc,
+            public: false,
+            collaborative: false,
+         })
+       }).then(res=> res.json()).then(data=>console.log(data))
+      }
 
 
 
 
+      const handleClick = (e)=>{
+        e.preventDefault()
+        PostPlaylist(post);
+      }
 
-      // PostPlaylist();
-
-      console.log(create);
+      console.log(post);
      return (
   <div className="bg-color">
       <Home token={token}   />
       <form>
-        <input name="desc" value={create.name} onChange={handleInput} />
-        <textarea name="desc" values={create.desc} onChange={handleInput} />
-        <button onClick={handleClick}>Create</button>
+         <input name="name" value={post.name} onChange={handleChange} />
+        <textarea name="desc" values={post.desc} onChange={handleChange} />
+        <button onClick={handleClick}>Create</button> 
       </form>
   </div>      
     );
