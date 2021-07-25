@@ -1,0 +1,26 @@
+.playlist{
+    width: 80%;
+    height: 5%;
+    overflow: hidden;
+    background: #121212;
+    display: grid;
+    grid-template-columns: 0.5fr 6fr 1fr;
+    color: wheat;
+}
+
+.image{
+    width: 4em;
+    height: 4em;
+    padding: 1px;
+}
+.image > img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.desc{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-self: center;
+    align-items: center;
+}
