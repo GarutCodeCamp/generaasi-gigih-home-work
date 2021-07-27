@@ -12,10 +12,15 @@ const Home=()=>{
     const state = useSelector(state => state)
     console.log(state);
     const dispatch = useDispatch;
-    dispatch(setAction("asbdwbh"))
-    console.log(dispatch);
+    dispatch(setAction("ini token"))
+
 
     useEffect(()=>{
+       hashTOken()
+        //   setToken(payload)
+    },[])
+
+    const hashTOken =  async()=>{
         const hashlogin = window.location.hash.substring(1).split('&').reduce((initial,item)=>{
             let parts = item.split('=');
             initial[parts[0]] = decodeURIComponent(parts[1]);
@@ -23,10 +28,8 @@ const Home=()=>{
           },{})
 
           const payload = hashlogin.access_token;
-        //   setToken(payload)
-    },[])
 
-
+    }
 
     // console.log(track);
     return(
