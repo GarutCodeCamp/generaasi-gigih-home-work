@@ -1,4 +1,6 @@
 import { useState,useEffect } from "react"
+import {useSelector} from 'react-redux';
+
 
 const Spotify = {
     access_spotify: process.env.REACT_APP_ACCESS_SPOTIFY,
@@ -17,7 +19,9 @@ const url_authorize = `https://accounts.spotify.com/authorize?client_id=${Spotif
 const url_access = `https://api.spotify.com/v1/me`
 
 
-const useTrack=(token)=>{
+const useTrack=()=>{
+    const token = useSelector(state => state.product.token)
+
     const [track,setTrack] = useState([])
     const fethTrack =async(search)=>{
         await fetch(`https://api.spotify.com/v1/search?q=${search||"a"}&type=track&limit=5`,{
@@ -41,7 +45,9 @@ const useTrack=(token)=>{
 
 
 
-const useAccount=(token)=>{
+const useAccount=()=>{
+    const token = useSelector(state => state.product.token)
+
     const [user,setuser]= useState('');
     const FetchUser=async (token)=>{
           await  fetch(url_access,{
@@ -62,7 +68,9 @@ const useAccount=(token)=>{
 
     return [user,FetchUser];
 }
-const usePlaylist=(token)=>{
+const usePlaylist=()=>{
+    const token = useSelector(state => state.product.token)
+
     const [playlist,setPlaylist] = useState([]);
     const fetchPlaylist=async(token)=>{
         await fetch(`https://api.spotify.com/v1/me/playlists?offset=5&limit=10`,{

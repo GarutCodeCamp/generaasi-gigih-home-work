@@ -1,7 +1,6 @@
 const Button1 =({onClick})=>{
     return(
         <button className="button" onClick={onClick}>Create</button>
-
     )
 }
 const Button2 =(props)=>{

@@ -2,7 +2,10 @@ import { useEffect } from "react"
 import { useAccount } from "../../utils"
 import { SideBar } from "../navbar"
 
-const User =({token})=>{
+import {useSelector} from 'react-redux'
+
+const User =()=>{
+    const token = useSelector(state => state.product.token)
     const [user,FetchUser]=useAccount(token)
     SideBar({userId:user.id})
     useEffect(()=>{

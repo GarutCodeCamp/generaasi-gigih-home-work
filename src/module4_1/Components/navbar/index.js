@@ -3,9 +3,10 @@ import {  usePlaylist } from "../../utils"
 import { Button1, Button2 } from "../Button"
 import {CardPlaylist} from "../CardPlaylist"
 import User from "../user"
+import {useSelector} from 'react-redux'
 
-export const Navbar =({token,url,searchTrack})=>{
-
+export const Navbar =({url,searchTrack})=>{
+    const token = useSelector(state => state.product.token)
     return(
         <nav className="navbar">
             <div className="container content">
@@ -22,13 +23,15 @@ export const Navbar =({token,url,searchTrack})=>{
 }
 
 
-export const SideBar=({token,user})=>{
+export const SideBar=({user})=>{
     const [post,setPost]=useState({
         collaborative: false,
         description: "",
         name: "",
         public: false,
     })
+    const token = useSelector(state => state.product.token)
+
     const[tokenID, setTokenId] = useState('')
     const[playlist,fetchPlaylist] = usePlaylist(token)
 
