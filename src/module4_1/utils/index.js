@@ -1,7 +1,8 @@
 import { useState,useEffect } from "react"
-import {useSelector} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
+import { setUrl } from "../redux/action";
 
-
+// Credentials
 const Spotify = {
     access_spotify: process.env.REACT_APP_ACCESS_SPOTIFY,
     client_id: process.env.REACT_APP_CLIENT_ID
@@ -15,10 +16,14 @@ const scope = [
     'playlist-modify',
     'playlist-modify-private'
 ]
-const url_authorize = `https://accounts.spotify.com/authorize?client_id=${Spotify.client_id}&response_type=token&redirect_uri=http://localhost:3000/&scope=${scope.join('%20')}&show_dialog=true`
+const url_authorize = `https://accounts.spotify.com/authorize?client_id=c6e2dd4489af428b87567e384a98502c&response_type=token&redirect_uri=http://localhost:3000/&scope=${scope.join('%20')}&show_dialog=true`
 const url_access = `https://api.spotify.com/v1/me`
-
-
+// const hashlogin = window.location.hash.substring(1).split('&').reduce((initial,item)=>{
+//     let parts = item.split('=');
+//     initial[parts[0]] = decodeURIComponent(parts[1]);
+//     return initial;
+//   },{})
+// utilities
 const useTrack=()=>{
     const token = useSelector(state => state.product.token)
 
@@ -34,13 +39,10 @@ const useTrack=()=>{
                 setTrack(tracks.tracks.items)
             console.log(tracks.items);
             }).catch(e=>{
-            if(e===""){
-            alert("belum login")
-
-            }
+                console.warn(e)
         })
     }
-    return [track,fethTrack]
+    return {track,fethTrack}
 }
 
 
@@ -103,6 +105,7 @@ export{
     useTrack,
     useAccount,
     usePlaylist,
+    // hashlogin
 }
 
 

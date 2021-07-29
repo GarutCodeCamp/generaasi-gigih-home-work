@@ -1,0 +1,17 @@
+.dashboard{
+    /* background-color: #121212; */
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.sidebar{
+    flex: 3;
+}
