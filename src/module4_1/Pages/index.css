@@ -42,10 +42,11 @@
     margin: auto;
     text-align: center;
     font-family: monospace;
+    
 }
 .user>img{
     height: 27px;
-    width: 40px;
+    width: 38px;
     margin: auto;
     border-radius: 90%;
 }
@@ -191,7 +192,7 @@
 }
 
 /* card song */
-.card-song{
+/* .card-song{
     background: #121212;
     display: grid;
     grid-template-columns: 1fr 2fr 1fr ;
@@ -211,7 +212,7 @@
     display: flex;
     justify-content: space-between;
     flex: 1;
-}
+} */
 .artist{
     text-align: end;
     flex: 2;

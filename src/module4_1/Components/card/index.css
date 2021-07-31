@@ -1,0 +1,36 @@
+*{
+
+}
+
+.card-song{
+    height: 43%;
+    width: 18%;
+    background: rgba(255, 255, 255, 0.1);
+    position: relative;
+    border-radius: 5px;
+    margin: 5px;
+}
+.container-song{
+    margin: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+.img{
+    height: 180px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+.img > img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.card-text{
+    color: white;
+    margin: auto;
+    line-height: 20px;
+}
+

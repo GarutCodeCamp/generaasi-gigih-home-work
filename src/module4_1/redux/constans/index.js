@@ -1,3 +1,3 @@
 export const ActionType = {
-    TOKEN: "TOKEN"
+    TOKEN: "TOKEN",
 }

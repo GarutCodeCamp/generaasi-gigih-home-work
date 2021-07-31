@@ -1,101 +1,50 @@
-import { useEffect, useState } from "react"
-import {  usePlaylist } from "../../utils"
-import { Button1, Button2 } from "../Button"
-import {CardPlaylist} from "../CardPlaylist"
+// import nav from "./navbar.module.css"
+import  "./index.css"
+import {SiSpotify,SiHomeassistant} from "react-icons/si"
+import {IoMdSearch,IoIosBook} from "react-icons/io"
 import User from "../user"
-import {useSelector} from 'react-redux'
-
-export const Navbar =({url,searchTrack})=>{
-    const token = useSelector(state => state.product.token)
+import { Link } from "react-router-dom"
+import Search from "../search"
+const Sidebar =()=>{
     return(
-        <nav className="navbar">
-            <div className="container content">
-                    <div className="search-bar">
-                        <input type="text" placeholder="cari" onChange={searchTrack}/>
-                    </div>
-                    <div className="account">
-                        {token ? <User token={token} /> : 
-                        <Button2 name="login" url={url}/>}
-                    </div>
+        <nav className="sidebar">
+            <div className="logo">
+                <SiSpotify />
+                <div className="h1">Spotify</div>
             </div>
-    </nav>
+            <div className="menus">
+                <div className="menu">
+                    <SiHomeassistant />
+                    <div>Home</div>
+                </div>
+                <div className="menu">
+                    <IoMdSearch />
+                    <div>Search</div> 
+                </div>
+                <div className="menu">
+                    <IoIosBook />
+                    <Link to="/create-playlist" className="Link">Buat Playlist</Link> 
+                </div>
+            </div>
+        </nav>
+    )
+}
+const Navbar = ()=>{
+    
+    return(
+        <nav className="nav">
+            <div className="nav-room">
+                <Search />
+            </div>
+            <div className="nav-user">
+                <User />
+            </div>
+        </nav>
     )
 }
 
 
-export const SideBar=({user})=>{
-    const [post,setPost]=useState({
-        collaborative: false,
-        description: "",
-        name: "",
-        public: false,
-    })
-    const token = useSelector(state => state.product.token)
-
-    const[tokenID, setTokenId] = useState('')
-    const[playlist,fetchPlaylist] = usePlaylist(token)
-
-    useEffect(()=>{
-        configPost(post)
-        fetchPlaylist(token)
-    },[])
-    const configPost =async(post_data)=>{
-        await fetch(`https://api.spotify.com/v1/users/${user}/playlists`,{
-            method: "POST",
-            headers:{
-                "Content-Type": "application/json",
-                Authorization: "Bearer " + token,
-            },
-            body: JSON.stringify({
-                collaborative: false,
-                description: post_data.description,
-                name: post_data.name,
-                public: false,
-            })
-        })
-        .then(res=>{
-            return res.json()
-        }).then(data=>{
-            setTokenId(data.id)
-            
-        })
-    }
-
-
-    const handleClick=async(e)=>{
-        if(true){
-            e.preventDefault()
-        await configPost(post)
-        alert("success")
-        }
-    }
-
-    const handleChange= async(e)=>{
-        e.preventDefault()
-        const {name,value} = e.target
-        await setPost({
-            ...post,[name]:value
-        })
-    }
-
-    return(
-        <div className="sidebar">
-        <div className="list-playlist">
-            <div className="button-create">
-                <form className="form">
-                    <input className="input" name="name" maxLength="12" value={post.name} type="text" onChange={handleChange} placeholder="title"/>
-                    <textarea className="text-area" name="description" maxLength="12" value={post.description} onChange={handleChange} placeholder="description"/>
-                    <Button1 onClick={handleClick}/>
-                </form>
-            </div>
-            <div className="playlist">
-                {playlist.map(res=>{
-                    return (
-                        <CardPlaylist name={res.name} desc={res.description} key={res.id}/>
-                    )
-                })}
-            </div>
-        </div>
-    </div>
-    )
+export {
+    Sidebar,
+    Navbar,
 }

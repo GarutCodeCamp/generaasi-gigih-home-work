@@ -1,6 +1,6 @@
-const Button1 =({onClick})=>{
+const Button1 =({onClick,name})=>{
     return(
-        <button className="button" onClick={onClick}>Create</button>
+        <button className="button" onClick={onClick}>{name}</button>
     )
 }
 const Button2 =(props)=>{

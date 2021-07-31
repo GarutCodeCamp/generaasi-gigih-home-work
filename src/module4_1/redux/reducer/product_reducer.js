@@ -1,7 +1,7 @@
 import { ActionType } from "../constans"
 
 const initialState ={
-    token: ''
+    token: '',
 }
 export const product_reducer = (state=initialState,{type,payload})=>{
     switch(type){
@@ -10,7 +10,7 @@ export const product_reducer = (state=initialState,{type,payload})=>{
                 ...state,
                 token: payload
             }   
-    
+        
         default:
             return state    
     
