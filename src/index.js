@@ -1,12 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Home from "./module4.3/Pages/Home/index";
-import { Provider } from "react-redux";
-import { store } from "./module4.3/redux/store";
+import Dashboard from "./module5.1/pages/DashBoard";
 
-ReactDOM.render(
-  <Provider store={store}>
-    <Home />
-  </Provider>,
-  document.getElementById("root")
-);
+ReactDOM.render(<Dashboard />, document.getElementById("root"));

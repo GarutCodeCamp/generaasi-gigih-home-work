@@ -1,0 +1,16 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.body{
+position: relative;
+width: 82vw;
+}
+.content{
+    background: #121212;
+    width: 100%;
+    min-height: 90vh;
+    overflow-y: scroll;
+    padding: 20px;
+}

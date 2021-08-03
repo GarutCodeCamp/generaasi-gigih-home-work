@@ -18,11 +18,52 @@
         "react"
     ],
     "rules": {
-        "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
-        "quotes": [2, "double", { "avoidEscape": true }],
-        "comma-dangle": ["error","never"],
-        "linebreak-style": ["error", "windows"],
-        "no-param-reassign": ["error", { "props": false }],
-        "arrow-body-style": [2, "always"]
+        "react/jsx-filename-extension": [
+            1,
+            {
+                "extensions": [
+                    ".js",
+                    ".jsx"
+                ]
+            }
+        ],
+        "quotes": [
+            2,
+            "double",
+            {
+                "avoidEscape": true
+            }
+        ],
+        "comma-dangle": [
+            "error",
+            "never"
+        ],
+        "linebreak-style": [
+            "error",
+            "windows"
+        ],
+        "no-param-reassign": [
+            "error",
+            {
+                "props": false
+            }
+        ],
+        "arrow-body-style": [
+            2,
+            "always"
+        ],
+        "indent": [
+            "error",
+            2,
+            {
+                "ignoredNodes": [
+                    "JSXElement"
+                ]
+            }
+        ],
+        "react/jsx-indent": [
+            "error",
+            2
+        ]
     }
 }
