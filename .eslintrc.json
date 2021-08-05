@@ -35,7 +35,7 @@
             }
         ],
         "comma-dangle": [
-            "error",
+            "off",
             "never"
         ],
         "linebreak-style": [
@@ -64,6 +64,11 @@
         "react/jsx-indent": [
             "error",
             2
-        ]
+        ],
+        "react/prop-types": "off",
+        "react/jsx-props-no-spreading": "off",
+        "no-unused-expressions":"off" ,
+        "prefer-template":"off",
+        "no-console":"off"
     }
 }

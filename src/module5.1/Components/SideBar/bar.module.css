@@ -28,6 +28,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: 100%;
 }
 
 .item{
@@ -55,4 +56,13 @@
 .item > li  p{
     margin: 0 20px;
     font-weight: bold;
+}
+.playlist{
+    padding-top: 1.5em;
+    width: 90%;
+}
+.playlist > li{
+    list-style: none;
+    line-height: 2em;
+    
 }

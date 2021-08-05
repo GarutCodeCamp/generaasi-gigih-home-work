@@ -1,9 +1,19 @@
 import React from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import PrivateRoute from "./module5.1/PrivateRoute";
+import Login from "./module5.1/Components/Login";
 
 function App() {
   return (
     <div className="App">
-      <h1>Hello world</h1>
+      <Router>
+        <Switch>
+          <Route exact path="/">
+            <Login />
+          </Route>
+          <PrivateRoute />
+        </Switch>
+      </Router>
     </div>
   );
 }

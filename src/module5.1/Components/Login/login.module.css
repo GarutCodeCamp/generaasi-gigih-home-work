@@ -9,13 +9,16 @@
     height: 200px;
   }
   
-  .login > a {
+  .login > button {
     color: white;
     text-decoration: none;
-    padding: 20px;
+    padding: 20px 40px;
     border-radius: 99px;
     font-weight: 800;
-    background-color: #1db954
+    background-color: #1db954;
+    border: none;
+    cursor: pointer;
+    outline: none;
   }
 
 *{

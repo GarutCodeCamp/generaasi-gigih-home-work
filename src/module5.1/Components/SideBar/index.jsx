@@ -3,9 +3,12 @@ import { ImHome } from "react-icons/im";
 import { BsCollectionFill } from "react-icons/bs";
 import { GoDiffAdded } from "react-icons/go";
 import { BiHeartSquare } from "react-icons/bi";
+import { useSelector } from "react-redux";
 import style from "./bar.module.css";
 
 const Sidebar = () => {
+  const playlist = useSelector((state) => { return state.product.playlist; });
+  const item = playlist.slice(0, 9);
   return (
     <div className={style.bar}>
       <div className={style.logo}>
@@ -35,6 +38,18 @@ const Sidebar = () => {
             <p>Lagu yang Disukai</p>
           </li>
         </ul>
+        <div className={style.playlist}>
+          <h2>Playlist</h2>
+          {item.map((res) => {
+            return (
+              <li key={res.id}>
+                #
+                {" "}
+                {res.name}
+              </li>
+            );
+          })}
+        </div>
       </div>
     </div>
   );
