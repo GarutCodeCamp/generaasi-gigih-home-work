@@ -1,0 +1,50 @@
+const SPOTIFY_ENDPOINT = 'https://api.spotify.com/v1';
+
+const getProfile = (accessToken) => fetch(`${SPOTIFY_ENDPOINT}/me`, {
+  headers: {
+    Authorization: `Bearer ${accessToken}`,
+  },
+}).then((res) => res.json());
+
+const getSearchTracks = (search, accessToken) => fetch(`${SPOTIFY_ENDPOINT}/search?q=${search}&type=track&limit=12`, {
+  method: 'GET',
+  headers: {
+    Authorization: `Bearer ${accessToken}`,
+  },
+}).then((res) => res.json());
+
+const createNewPlaylist = (userID, accessToken, newPlaylist) => fetch(`${SPOTIFY_ENDPOINT}/users/${userID}/playlists`, {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+    Authorization: `Bearer ${accessToken}`,
+  },
+  body: JSON.stringify({
+    name: newPlaylist.name,
+    description: newPlaylist.description,
+    public: false,
+    collaborative: false,
+  }),
+}).then((res) => res.json());
+
+const storeTracksToNewPlaylist = (newPlaylistId, accessToken, playlist) => fetch(
+  `${SPOTIFY_ENDPOINT}/playlists/${newPlaylistId}/tracks?position=0&uris=${playlist}`,
+  {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${accessToken}`,
+    },
+    body: JSON.stringify({
+      uris: playlist,
+      position: 0,
+    }),
+  }
+).then((res) => res.json());
+
+export {
+  getProfile,
+  getSearchTracks,
+  createNewPlaylist,
+  storeTracksToNewPlaylist,
+};
