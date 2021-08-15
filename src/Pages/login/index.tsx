@@ -23,7 +23,7 @@ const Login = () => {
     <div className="bg-spotify">
       <div className="card">
         <h1>Login To Spotify</h1>
-        <Button onClick={loginSpotify}>Login</Button>
+        <Button variant="contained" color="primary" onClick={loginSpotify}>Login</Button>
       </div>
     </div>
   );

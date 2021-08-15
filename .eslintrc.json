@@ -53,6 +53,7 @@
           }],
         "react/no-children-prop": "off",
         "quotes":"off",
-        "implicit-arrow-linebreak":"off"
+        "implicit-arrow-linebreak":"off",
+        "no-console":"off"
     }
 }
