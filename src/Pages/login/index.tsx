@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { Button } from '@material-ui/core';
 import { useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-
+import './index.css'
 import { loginSpotify, getAccessToken } from '../../utils/Credentials';
 // eslint-disable-next-line import/extensions
 import { login, storeUser } from '../../Redux/Authslice';
@@ -20,9 +20,12 @@ const Login = () => {
     }
   }, [dispatch, history]);
   return (
-    <>
-      <Button onClick={loginSpotify}>Login</Button>
-    </>
+    <div className="bg-spotify">
+      <div className="card">
+        <h1>Login To Spotify</h1>
+        <Button onClick={loginSpotify}>Login</Button>
+      </div>
+    </div>
   );
 };
 
